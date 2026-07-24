@@ -1,0 +1,14 @@
+{
+  "repo": "bitnomial",
+  "feeds": [
+    {
+      "source": "https://bitnomial.com/exchange/docs/api/rest/authentication/",
+      "feed_url": "https://bitnomial.com/exchange/docs/api/rest/authentication/",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    }
+  ],
+  "post_count": 0,
+  "fetched": "2026-07-20T13:31:34Z"
+}

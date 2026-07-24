@@ -1,0 +1,53 @@
+generated: '2026-07-18'
+method: searched
+source: https://bitnomial.com/exchange/docs/api/rest/overview/
+docs: https://bitnomial.com/exchange/docs/api/rest/overview/
+authentication:
+  style: hmac-signed-api-key
+  detail: >-
+    HMAC-SHA256 request signing via BTNL-CONNECTION-ID / BTNL-AUTH-TIMESTAMP /
+    BTNL-SIGNATURE headers. See authentication/bitnomial-authentication.yml.
+idempotency:
+  supported: false
+  detail: >-
+    Bitnomial does not document an idempotency-key header or idempotent-retry
+    contract for the public REST API. Order entry idempotency, where present,
+    is handled inside the binary (BTP) order-entry protocol, not the HTTP API.
+pagination:
+  style: cursor
+  cursor_object: CursorInfo
+  request_params:
+    - cursor    # opaque cursor string returned by a prior page
+    - limit     # max items per page
+    - order     # asc | desc
+    - begin_time
+    - end_time
+    - day       # overrides begin_time/end_time
+  response_shape: >-
+    List endpoints return a Pagination<T, CursorInfo> envelope carrying the page
+    of items plus a cursor for the next query.
+rate_limiting:
+  limit: 200 requests / 5 minutes
+  signal: HTTP 403 returned when the limit is exceeded
+  header_signal: null   # no documented X-RateLimit-* response headers
+versioning:
+  scheme: uri-path
+  current: v1
+  base_path: /exchange/api/v1/
+error_envelope:
+  format: http-status
+  detail: >-
+    Errors are signalled with HTTP status codes (e.g. 403 for rate-limit or
+    signature/auth failures). No RFC 9457 problem+json envelope is documented.
+    See errors/bitnomial-problem-types.yml.
+request_tracing:
+  request_id_header: null   # no documented request-id/trace header
+metadata:
+  supported: false
+timestamps:
+  format: ISO 8601 (UTC, millisecond precision)
+cross_reference:
+  errors: errors/bitnomial-problem-types.yml
+  lifecycle: lifecycle/bitnomial-lifecycle.yml
+  authentication: authentication/bitnomial-authentication.yml
+  data_model: data-model/bitnomial-data-model.yml

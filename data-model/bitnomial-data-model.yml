@@ -1,0 +1,95 @@
+generated: '2026-07-18'
+method: derived
+source: https://bitnomial.com/exchange/docs/api/rest/
+notes: >-
+  Derived from Bitnomial's published REST object references (Product, Order,
+  Fill, and product spec objects). Bitnomial does not publish an OpenAPI spec;
+  entities and id-reference relationships are taken from the documented object
+  field lists, not inferred beyond what the docs state.
+entities:
+  - name: Product
+    endpoint: /product/data/
+    id_field: product_id
+    key_fields:
+      - product_id
+      - last_price
+      - settlement_price
+      - open_interest
+      - volume
+      - price_limit_upper
+      - price_limit_lower
+  - name: ProductSpec
+    endpoint: /product/specs/
+    id_field: product_id
+    variants: [ProductFutureSpec, ProductSpreadSpec, ProductOptionSpec]
+  - name: Order
+    endpoint: /orders
+    id_field: id
+    key_fields:
+      - id
+      - symbol
+      - product_id
+      - product_type
+      - connection_id
+      - account_id
+      - clearing_firm_code
+      - side
+      - price
+      - quantity_requested
+      - quantity_filled
+      - status
+      - time_in_force
+  - name: Fill
+    endpoint: /fills
+    id_field: ack_id
+    key_fields:
+      - ack_id
+      - order_id
+      - symbol
+      - product_id
+      - product_type
+      - connection_id
+      - account_id
+      - clearing_firm_code
+      - side
+      - price
+      - quantity_requested
+      - quantity_filled
+      - liquidity
+  - name: BlockTrade
+    endpoint: /block-trades
+  - name: Index
+    endpoint: /indexes
+  - name: FundingRate
+    endpoint: /funding-rates
+  - name: MarketStats
+    endpoint: /market-stats
+relationships:
+  - from: Order
+    to: Product
+    type: belongs_to
+    via: product_id
+  - from: Order
+    to: Connection
+    type: belongs_to
+    via: connection_id
+  - from: Order
+    to: Account
+    type: belongs_to
+    via: account_id
+  - from: Fill
+    to: Order
+    type: belongs_to
+    via: order_id
+  - from: Fill
+    to: Product
+    type: belongs_to
+    via: product_id
+  - from: Fill
+    to: Account
+    type: belongs_to
+    via: account_id
+  - from: ProductSpec
+    to: Product
+    type: has_one
+    via: product_id

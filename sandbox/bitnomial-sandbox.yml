@@ -1,0 +1,27 @@
+generated: '2026-07-18'
+method: searched
+source: https://bitnomial.com/exchange/docs/api/environments/
+docs: https://bitnomial.com/exchange/docs/api/environments/
+summary: >-
+  Bitnomial publishes a dedicated Sandbox environment alongside Production and a
+  Disaster Recovery failover environment. The Sandbox exposes the same REST /
+  WebSocket surface under a distinct base path for integration testing.
+environments:
+  - name: production
+    rest_base: https://bitnomial.com/exchange/api/v1/prod
+  - name: sandbox
+    rest_base: https://bitnomial.com/exchange/api/v1/sandbox
+  - name: disaster-recovery
+    detail: Used for disaster fail-over scenarios.
+separation:
+  mechanism: base-path
+  detail: >-
+    Production requests target /exchange/api/v1/prod and sandbox requests target
+    /exchange/api/v1/sandbox. Credentials (ConnectionId + AuthToken) are
+    provisioned per environment via the customer portal.
+test_values:
+  note: >-
+    Bitnomial does not publish canned test card/account magic values; sandbox
+    activity uses portal-provisioned sandbox connections. No test credentials
+    are reproduced here (none are published).
+onboarding_contact: help@exchange.bitnomial.com

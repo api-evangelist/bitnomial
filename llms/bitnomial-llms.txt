@@ -1,0 +1,15 @@
+# Bitnomial
+
+> Bitnomial is a cryptocurrency exchange platform offering futures and options trading for Bitcoin and other digital assets. It provides a robust trading environment with a focus on security, transparency, and efficiency.
+
+Bitnomial offers a range of products and services designed to meet the needs of both institutional and individual traders. The platform is built on cutting-edge technology to ensure fast and reliable trading experiences.
+
+## Documentation
+
+- [API Documentation](https://bitnomial.com/docs/): Comprehensive guide to using Bitnomial's API for automated trading.
+
+## Resources
+
+- [News](https://bitnomial.com/news): Step-by-step tutorials for new and experienced traders.
+- [Blog](https://bitnomial.com/blog): Analysis and insights into the cryptocurrency market trends.
+- [Products](https://bitnomial.com/products): Explore a diverse range of trading products including futures, options, and perpetual contracts tailored for cryptocurrency markets.

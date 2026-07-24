@@ -1,0 +1,38 @@
+generated: '2026-07-18'
+method: searched
+source: https://bitnomial.com/exchange/docs/api/
+notes: >-
+  Cross-cutting / industry standards asserted from Bitnomial's published API
+  docs and company disclosures. Bitnomial operates CFTC-regulated subsidiaries
+  (a Designated Contract Market, a Derivatives Clearing Organization, and a
+  Futures Commission Merchant), which is a genuine published regulatory
+  compliance posture rather than an infosec certification.
+standards:
+  - id: fix-4.4
+    conforms: true
+    evidence: Bitnomial publishes a FIX 4.4 order-entry API with dropcopy.
+  - id: hmac-request-signing
+    conforms: true
+    evidence: REST API authenticates with HMAC-SHA256 signed requests.
+  - id: cursor-pagination
+    conforms: true
+    evidence: List endpoints return a Pagination<T, CursorInfo> cursor envelope.
+  - id: cftc-regulated
+    conforms: true
+    evidence: >-
+      Operates CFTC-regulated DCM (exchange), DCO (clearinghouse), and FCM
+      (clearing brokerage) subsidiaries.
+  - id: oauth2
+    conforms: false
+    evidence: No OAuth 2.0 security scheme; uses symmetric HMAC signing.
+  - id: oidc
+    conforms: false
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: Errors are plain HTTP status codes, not application/problem+json.
+  - id: fhir-r4
+    conforms: false
+  - id: scim
+    conforms: false
+  - id: odata
+    conforms: false

@@ -1,0 +1,19 @@
+generated: '2026-07-18'
+method: searched
+host: https://bitnomial.com
+notes: >-
+  Probed the standard /.well-known/ discovery surface on bitnomial.com. None of
+  the discovery documents are published (all 404). A root-level /llms.txt IS
+  served (200) and is captured verbatim at llms/bitnomial-llms.txt; it is not a
+  /.well-known/ document so it is not indexed here.
+documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404

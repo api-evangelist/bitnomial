@@ -1,8 +1,18 @@
 aid: bitnomial
 name: Bitnomial
-description: 'Bitnomial is a company surfaced as a portfolio company of electric-capital and added to
-  the API Evangelist network as a stub for enrichment. Sector: fintech. This profile is a lead awaiting
-  the enrichment pipeline.'
+description: >-
+  Bitnomial is a Chicago-based derivatives exchange company that owns and
+  operates U.S. CFTC-regulated subsidiaries — a Designated Contract Market
+  (exchange/DCM), a Derivatives Clearing Organization (clearinghouse/DCO), and a
+  Futures Commission Merchant (clearing brokerage/FCM). It offers leveraged spot,
+  perpetuals, futures, options, and prediction markets on a single regulated
+  venue with crypto margin and settlement. For developers, Bitnomial publishes a
+  public HTTPS REST API (products, orders, fills, block trades, indexes, funding
+  rates, market stats), a real-time WebSocket market-data feed (trade, book,
+  block, status channels), a low-latency binary order-entry protocol (BTP), and
+  a FIX 4.4 API with dropcopy. REST authentication uses HMAC-SHA256 request
+  signing with per-connection credentials. Surfaced as a portfolio company of
+  Electric Capital and enriched by the API Evangelist pipeline.
 url: https://raw.githubusercontent.com/api-evangelist/bitnomial/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -10,13 +20,72 @@ x-backed-by:
 - electric-capital
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
+image: https://bitnomial.com/images/social-preview.jpg
 tags:
 - Company
 - Fintech
-apis: []
+- Cryptocurrency
+- Derivatives
+- Exchange
+- Trading
+- Market Data
+- Futures
+- Options
+- CFTC Regulated
+apis:
+- name: Bitnomial Exchange REST API
+  description: >-
+    Public HTTPS REST API for the Bitnomial exchange — products and contract
+    specs, orders, fills, block trades, indexes, funding rates, and market
+    statistics. HMAC-SHA256 signed authentication; cursor pagination; rate
+    limited to 200 requests per 5 minutes.
+  humanURL: https://bitnomial.com/exchange/docs/api/rest/overview/
+  baseURL: https://bitnomial.com/exchange/api/v1/prod
+  tags:
+  - REST
+  - Trading
+  - Market Data
+  properties:
+  - type: Documentation
+    url: https://bitnomial.com/exchange/docs/api/rest/overview/
+  - type: Authentication
+    url: authentication/bitnomial-authentication.yml
+  - type: Conventions
+    url: conventions/bitnomial-conventions.yml
+  - type: ErrorCatalog
+    url: errors/bitnomial-problem-types.yml
+  - type: DataModel
+    url: data-model/bitnomial-data-model.yml
+- name: Bitnomial Market Data WebSocket API
+  description: >-
+    Real-time WebSocket market-data feed delivering trade, order book, block
+    trade, and market status messages for subscribed products.
+  humanURL: https://bitnomial.com/exchange/docs/api/websocket/subscribe/
+  baseURL: https://bitnomial.com/exchange/api/v1/prod
+  tags:
+  - WebSocket
+  - Market Data
+  - Streaming
+  properties:
+  - type: AsyncAPI
+    url: asyncapi/bitnomial-market-data-asyncapi.yml
+  - type: Documentation
+    url: https://bitnomial.com/exchange/docs/api/websocket/subscribe/
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -25,3 +94,56 @@ maintainers:
 common:
 - type: Website
   url: https://bitnomial.com/
+- type: DeveloperPortal
+  url: https://bitnomial.com/exchange/docs
+- type: Documentation
+  url: https://bitnomial.com/exchange/docs/api/overview/
+- type: APIReference
+  url: https://bitnomial.com/exchange/docs/api/rest/overview/
+- type: GettingStarted
+  url: https://bitnomial.com/exchange/docs/api/rest/authentication/
+- type: Blog
+  url: https://bitnomial.com/blog
+- type: Support
+  url: mailto:help@exchange.bitnomial.com
+- type: StatusPage
+  url: https://bitnomial.statuspage.io
+- type: GitHubOrganization
+  url: https://github.com/bitnomial
+- type: Authentication
+  url: authentication/bitnomial-authentication.yml
+- type: Conventions
+  url: conventions/bitnomial-conventions.yml
+- type: ErrorCatalog
+  url: errors/bitnomial-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/bitnomial-lifecycle.yml
+- type: DataModel
+  url: data-model/bitnomial-data-model.yml
+- type: Sandbox
+  url: sandbox/bitnomial-sandbox.yml
+- type: Packages
+  url: packages/bitnomial-packages.yml
+- type: SDKs
+  url: packages/bitnomial-packages.yml
+- type: CLI
+  url: cli/bitnomial-cli.yml
+- type: LLMsTxt
+  url: llms/bitnomial-llms.txt
+- type: MCPServer
+  url: mcp/bitnomial-mcp.yml
+- type: AsyncAPI
+  url: asyncapi/bitnomial-market-data-asyncapi.yml
+- type: Conformance
+  url: conformance/bitnomial-conformance.yml
+- type: DomainSecurity
+  url: security/bitnomial-domain-security.yml
+- type: VulnerabilityDisclosure
+  url: security/bitnomial-vulnerability-disclosure.yml
+- type: Security
+  url: https://bitnomial.com/security
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

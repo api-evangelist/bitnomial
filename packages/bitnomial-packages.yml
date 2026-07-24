@@ -1,0 +1,25 @@
+generated: '2026-07-18'
+method: searched
+source: https://github.com/bitnomial/python-btnl-client
+notes: >-
+  Bitnomial publishes one first-party client library, the Python btnl-client,
+  distributed via GitHub / git install (not published to PyPI as of this
+  writing). npm, PyPI (btnl / bitnomial / btnl-client), Maven Central, NuGet,
+  pkg.go.dev, RubyGems, Packagist and crates.io were probed and returned no
+  official Bitnomial-published package.
+packages:
+  - language: python
+    registry: github
+    name: btnl-client
+    repo: bitnomial/python-btnl-client
+    url: https://github.com/bitnomial/python-btnl-client
+    install: pip install git+https://github.com/bitnomial/python-btnl-client
+    description: >-
+      Basic Python SDK for Bitnomial's trading interface — binary (BTP) order
+      entry / pricefeed client, WebSocket market-data client, and HTTP API
+      client (btnl_client.product). Ships a CLI entry point (python -m
+      btnl_client).
+    license: BSD-3-Clause
+    maintainer_email: opensource@bitnomial.com
+    published_to_registry: false
+    official: true

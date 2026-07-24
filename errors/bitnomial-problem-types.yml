@@ -1,0 +1,27 @@
+generated: '2026-07-18'
+method: searched
+source: https://bitnomial.com/exchange/docs/api/rest/overview/
+format: http-status
+notes: >-
+  Bitnomial's public REST docs signal errors with plain HTTP status codes and
+  do not document an RFC 9457 problem+json envelope or a numbered error-code
+  registry. Only the status conditions explicitly documented are captured here;
+  none are fabricated.
+problems:
+  - status: 403
+    title: Rate limit exceeded
+    detail: >-
+      The exchange REST API is limited to 200 requests per 5 minutes; exceeding
+      the limit returns HTTP 403.
+    remediation: Throttle requests to stay within 200 requests / 5 minutes.
+    source: https://bitnomial.com/exchange/docs/api/rest/overview/
+  - status: 403
+    title: Authentication / signature failure
+    detail: >-
+      Private endpoints reject requests whose BTNL-SIGNATURE is invalid or whose
+      BTNL-AUTH-TIMESTAMP is more than 30 seconds from exchange time.
+    remediation: >-
+      Recompute the HMAC-SHA256 signature over
+      method + requestPath + queryString + headers + body and ensure the
+      timestamp is current.
+    source: https://bitnomial.com/exchange/docs/api/rest/authentication/

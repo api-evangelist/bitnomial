@@ -1,0 +1,24 @@
+generated: '2026-07-18'
+method: searched
+source: https://bitnomial.com/exchange/docs/api/rest/overview/
+versioning:
+  scheme: uri-path
+  current: v1
+  base_path: /exchange/api/v1/
+  docs: https://bitnomial.com/exchange/docs/api/rest/overview/
+deprecation:
+  policy_url: null
+  sunset_header: false
+  detail: No public deprecation / RFC 8594 Sunset policy is documented.
+sla:
+  url: null
+  uptime_target: null
+status_page: https://bitnomial.statuspage.io
+environments:
+  - name: production
+    rest_base: https://bitnomial.com/exchange/api/v1/prod
+  - name: sandbox
+    rest_base: https://bitnomial.com/exchange/api/v1/sandbox
+  - name: disaster-recovery
+    detail: Failover environment used for disaster recovery scenarios.
+deprecated_operations: []

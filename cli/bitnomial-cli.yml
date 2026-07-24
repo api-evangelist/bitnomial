@@ -1,0 +1,23 @@
+generated: '2026-07-18'
+method: searched
+source: https://github.com/bitnomial/python-btnl-client
+notes: >-
+  Bitnomial ships a first-party CLI as part of the python btnl-client library
+  (invoked as `python -m btnl_client`). It is explicitly documented as an
+  interactive / testing interface whose surface may change between versions, so
+  it is not recommended as an application build target. The binary itself is
+  catalogued in packages/bitnomial-packages.yml.
+name: btnl_client
+invocation: python -m btnl_client
+install:
+  - method: git
+    command: pip install git+https://github.com/bitnomial/python-btnl-client
+commands:
+  - name: ws-feed
+    description: >-
+      Set up a default WebSocket feed and print market-data events as they
+      occur.
+    example: python -m btnl_client ws-feed
+  - name: get-orders
+    description: Query orders for a given connection.
+    example: python -m btnl_client get-orders <connection_id> <auth_token>
