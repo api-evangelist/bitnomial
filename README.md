@@ -64,6 +64,115 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Bitnomial is a company surfaced as a portfolio company of electric-capital and added to the API Evangelist network as a stub for enrichment. Sector: fintech. This profile is a lead awaiting the enrichment pipeline.
+Bitnomial is a Chicago-based derivatives exchange company that owns and operates U.S. CFTC-regulated subsidiaries — a Designated Contract Market (exchange/DCM), a Derivatives Clearing Organization (clearinghouse/DCO), and a Futures Commission Merchant (clearing brokerage/FCM). It offers leveraged spot, perpetuals, futures, options, and prediction markets on a single regulated venue with crypto margin and settlement. For developers, Bitnomial publishes a public HTTPS REST API (products, orders, fills, block trades, indexes, funding rates, market stats), a real-time WebSocket market-data feed (trade, book, block, status channels), a low-latency binary order-entry protocol (BTP), and a FIX 4.4 API with dropcopy. REST authentication uses HMAC-SHA256 request signing with per-connection credentials. Surfaced as a portfolio company of Electric Capital and enriched by the API Evangelist pipeline.
 
-Backed by: electric-capital — https://bitnomial.com/
+**Areas:** Company · Fintech · Cryptocurrency · Derivatives · Exchange · Trading · Market Data · Futures · Options · CFTC Regulated
+
+## Bitnomial on APIs.io
+
+Everything profiled for Bitnomial is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/bitnomial/](https://apis.io/providers/bitnomial/)** — or go straight to one of the APIs or properties below.
+
+### APIs (2)
+
+- [Bitnomial Exchange REST API](https://apis.io/apis/bitnomial/bitnomial-exchange-rest-api/) — Public HTTPS REST API for the Bitnomial exchange — products and contract specs, orders, fills, block trades, indexes, funding rates, and market statistics.…
+- [Bitnomial Market Data WebSocket API](https://apis.io/apis/bitnomial/bitnomial-market-data-websocket-api/) — Real-time WebSocket market-data feed delivering trade, order book, block trade, and market status messages for subscribed products.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### AsyncAPI (1)
+
+Event-driven and webhook contracts.
+
+- [Bitnomial Market Data WebSocket API](https://apis.io/asyncapis/bitnomial/bitnomial-market-data-asyncapi/)
+
+#### Event channels (5)
+
+Individual events and webhooks the provider emits.
+
+- [block](https://apis.io/channels/bitnomial/block/)
+- [book](https://apis.io/channels/bitnomial/book/)
+- [control](https://apis.io/channels/bitnomial/control/)
+- [status](https://apis.io/channels/bitnomial/status/)
+- [trade](https://apis.io/channels/bitnomial/trade/)
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [bitnomial](https://apis.io/servers/bitnomial/bitnomial/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Bitnomial Authentication](https://apis.io/security/bitnomial/bitnomial-authentication/)
+- [Bitnomial Domain Security](https://apis.io/security/bitnomial/bitnomial-domain-security/)
+- [Bitnomial Vulnerability Disclosure](https://apis.io/security/bitnomial/bitnomial-vulnerability-disclosure/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://bitnomial.com/)
+- [Documentation](https://bitnomial.com/exchange/docs/api/overview/)
+- [Getting started](https://bitnomial.com/exchange/docs/api/rest/authentication/)
+- [API reference](https://bitnomial.com/exchange/docs/api/rest/overview/)
+- [Blog](https://bitnomial.com/blog)
+- [Security](https://bitnomial.com/security)
+- [GitHub](https://github.com/bitnomial)
+- [Status](https://bitnomial.statuspage.io)
+
+## API Evangelist rating
+
+**Kin Score 39.0** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 39.6 |
+| Contract governance | 18.2 |
+| Operational transparency | 28.9 |
+| Developer ergonomics | 78.6 |
+| Access clarity | 0.0 |
+
+**Agent readiness 19.4** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | derived (partial credit) |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 21.3** — Securities & Market Data
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/bitnomial/](https://apis.io/providers/bitnomial/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Bitnomial: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/bitnomial/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
